@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import 'swiper/swiper.min.css'
 import "swiper/swiper-bundle.min.css";
 import { Autoplay } from "swiper";
-
+import { CircularProgress } from '@mui/material'
 
 
 const baseUrl = 'https://image.tmdb.org/t/p/original/'
@@ -15,12 +15,17 @@ const baseUrl = 'https://image.tmdb.org/t/p/original/'
 const Row = ({ title , fetchUrl , isLargeRow }) => {
    const [movies , setMovies ] = useState([])
    const [trailerUrl , setTrailerUrl] = useState('');
+   const [loading , setLoading ] = useState(false);
 
    useEffect(() => {
       const fetchMovies = async () => {
+         setLoading(true);
          const response = await axios.get(fetchUrl);
-         setMovies(response.data.results);
-         return ;
+         if(response.status === 200){
+            setLoading(false);
+            setMovies(response.data.results);
+            return ;
+         }
       }
       fetchMovies();
    }, [fetchUrl]);
@@ -55,51 +60,56 @@ const Row = ({ title , fetchUrl , isLargeRow }) => {
                slidesPerView={ isLargeRow ? 7.2 : 6.8}
                loop
                autoplay={{ 
-                  delay:isLargeRow ? 3000 : null
+                  delay:isLargeRow ? 3000 : 60 * 1000
                }}
                modules={[Autoplay]}
                breakpoints={{
                   1250: {
-                     slidesPerView: isLargeRow ? 6.8 : 6.4 ,
+                     slidesPerView: isLargeRow ? 6.9 : 6.7 ,
                   },
                   1115: {
-                    slidesPerView: isLargeRow ? 5.7 : 5.5 ,
+                    slidesPerView: isLargeRow ? 5.8 : 5.6 ,
                   },
                   // when window width is >= 768px
                   1050: {
-                     slidesPerView: isLargeRow ? 5.2 : 4.8 ,
+                     slidesPerView: isLargeRow ? 5.4 : 5 ,
                   },
                   900: {
-                     slidesPerView: isLargeRow ? 4.5 : 4.3 ,
+                     slidesPerView: isLargeRow ? 4.7 : 4.5 ,
                   },
                   800: {
-                     slidesPerView: isLargeRow ? 4.2 : 4.2 ,
+                     slidesPerView: isLargeRow ? 4.4 : 4.3 ,
                   },
                   700: {
-                     slidesPerView: isLargeRow ? 3.9 : 3.7 ,
+                     slidesPerView: isLargeRow ? 4 : 3.8 ,
                   },
                   600: {
                      slidesPerView: isLargeRow ? 3.2 : 3 ,
                   },
                   500: {
-                     slidesPerView: isLargeRow ? 2.3 : 2.2 ,
+                     slidesPerView: isLargeRow ? 2.6 : 2.4 ,
                   },
-                  420: {
+                  410: {
                      slidesPerView: isLargeRow ? 2 : 2 ,
                   },
                   350: {
-                     slidesPerView: isLargeRow ? 1.7 : 1.5 ,
+                     slidesPerView: isLargeRow ? 1.9 : 1.8 ,
                   },
                   280: {
-                     slidesPerView: isLargeRow ? 1.2 : 1.1 ,
+                     slidesPerView: isLargeRow ? 1.5 : 1.4 ,
                   },
                   
                }}
                 
             >
-            {
+            {  
+               loading ? 
+               <div className='movies__loading'>
+                  <CircularProgress color='error' />
+               </div>
+               :
                movies?.map(movie => (
-                  <SwiperSlide>
+                  <SwiperSlide  key={movie.id}>
                   <img className={`row__poster ${isLargeRow && 'large__poster'}`} 
                   key={movie.id}
                   src={`${baseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}

@@ -47,3 +47,16 @@
    }
    
 }
+
+@media (max-width:600px){
+   .step2__content__container {
+      .step2__content{
+         width: 95%;
+         margin: 0 auto;
+
+         h3{
+            font-size : 1.7rem;
+         }
+      }
+   }
+}
