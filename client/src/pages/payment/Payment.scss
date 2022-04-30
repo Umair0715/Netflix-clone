@@ -1,0 +1,84 @@
+.payment__container{
+   width: 100%;
+   min-height: calc(100vh - 70px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.payment{
+   span{
+      font-size: 14px;
+      color: var(--grey);
+   }
+   h3{
+      font-size: 2rem;
+      margin: 3px 0;
+   }
+   h6{  
+      // text-align: center;
+      font-size: 1.5rem;
+      color: rgb(71, 71, 71);
+      margin: 1rem 0 0 0;
+   }
+  
+}
+
+.paymentForm {
+   width: 400px;
+   height: 100%;
+ }
+ 
+ .paymentForm > p {
+   font: 400 2vmax "Roboto";
+   color: rgba(0, 0, 0, 0.753);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+   padding: 1vmax 0;
+   text-align: center;
+   width: 50%;
+   margin: auto;
+ }
+ 
+ .paymentForm > div {
+   display: flex;
+   align-items: center;
+   margin: 2vmax 0;
+ }
+ 
+ .paymentInput {
+   padding: 1vmax 4vmax;
+   padding-right: 1vmax;
+   width: 100%;
+   box-sizing: border-box;
+   border: 1px solid rgba(0, 0, 0, 0.267);
+   border-radius: 4px;
+   outline: none;
+ }
+ .paymentForm > div > svg {
+   position: absolute;
+   transform: translateX(1vmax);
+   font-size: 1.6vmax;
+   color: rgba(0, 0, 0, 0.623);
+ }
+
+ @media (max-width: 550px){
+   .payment__container{
+      padding: 0 10px;
+   }
+   .payment {
+      h3{
+         font-size: 1.6rem;
+      }
+      p{
+         font-size: 14px;
+      }
+      h6{
+         font-size: 1.2rem;
+      }
+   }
+   .paymentForm{
+      width: 100%;
+      
+   }
+ }

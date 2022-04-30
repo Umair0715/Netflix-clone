@@ -1,0 +1,38 @@
+.footer{
+   width: 100%;
+   background-color: var(--border);
+   display: grid;
+   place-items: center;
+   padding: 0 0 1rem 0;
+   .footer__bg{
+      background:var(--dark);
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.footer__content{
+   width: 85%;
+   margin: 0 auto;
+   padding: 3rem 0;
+   color: white; 
+   ul{
+      margin: 2rem;
+      li{
+         margin: 1.5rem 0;
+         cursor: pointer;
+         color: var(--grey);
+         font-size: .85rem;
+         &:hover{
+            text-decoration:underline;
+            color: var(--pure);
+         }
+      }
+   }
+}
+
+@media (max-width: 800px){
+   .footer__content{
+      width: 95%;
+   }
+}

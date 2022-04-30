@@ -1,0 +1,49 @@
+.step2__content__container{
+   width: 100%;
+   min-height: calc(100vh - 70px);
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+
+   .step2__content{
+      width: 400px;
+      span{
+         color: var(--grey);
+         font-size: 14px;
+      }
+      h3{
+         font-size: 2rem;
+         line-height: 1.2;
+         margin-top: 5px;
+         color : rgb(44, 44, 44);
+      }
+      .step2__text{
+         margin: 15px 0;
+         p {
+            margin-top: 5px;
+         }
+      }
+
+      .step2__form form{
+         width: 100%;
+         display:flex;
+         flex-direction: column;
+         gap: 1rem;
+         margin-top: 1rem;
+      }
+
+      .step2__nextBnt{
+         margin-top: 2rem;
+         width: 100%;
+         button{
+            width: 100%;
+            
+         }
+   }
+
+
+
+   }
+   
+}

@@ -1,0 +1,46 @@
+.step1__content__container{
+   width: 100%;
+   min-height: calc(100vh - 70px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .step1__icons__container{
+      display:flex;
+      gap : 1rem;
+      color: var(--main);
+      align-items: center;
+
+   }
+   span{
+      margin-top: 1rem;
+      font-size: 14px;
+      color: var(--grey);
+   }
+   h3{
+      font-size: 2rem;
+      text-align: center;
+      line-height: 1.2;
+      margin-top: 5px;
+      color : rgb(44, 44, 44);
+   }
+   .step1__text{
+      text-align: center;
+      margin: 5px 0;
+   }
+   .step1__nextBtn{
+      margin-top: 1.5rem;
+      width: 100%;
+      text-align: center;
+   }
+
+}
+
+@media (max-width: 600px){
+   .step1__content__container{
+      h3{
+         font-size: 1.5rem;
+      }
+   }
+}

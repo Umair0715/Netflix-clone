@@ -1,0 +1,207 @@
+.hero{
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   .banner{
+      position: absolute;
+      top: 0;
+      left : 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .overlay{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left : 0;
+      background-image: linear-gradient(to top ,rgba(0,0,0,0.5) , rgba(0,0,0,0.5) );
+   }
+
+}
+
+.hero__nav{
+   width: 100%;
+   position: absolute; 
+   top: 0;
+   left : 0;
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 4rem;
+   background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.5) 50%);
+
+   .logo img{
+      height: 80px;
+      z-index: 99;
+   }
+
+   .nav__menu{
+      list-style-type: none;
+      li {
+         background-color: var(--main);
+         color: white;
+         padding: .5rem 1.5rem;
+         border-radius: 5px;
+         &:hover{
+            background-color: var(--main-hover);
+         }
+         a{
+            text-decoration: none;
+            color : white;
+         }
+      }
+   }
+}
+
+.hero__content{
+   width: 100%;
+   position: absolute;
+   top: 58%;
+   left : 50%;
+   transform: translate(-50% ,-50%);
+   color: var(--pure);
+   text-align: center;
+
+   h1{
+      font-size: 3.3rem;
+      line-height: 1.2;
+   }
+   h3{
+      font-size: 1.6rem;
+      margin: 1rem 0 1.5rem 0;
+      font-weight: 400;
+   }
+   p{
+      font-size: 1.2rem;
+   }
+   .email__error{
+      width: 52%;
+      margin: 0 auto;
+      text-align: left;
+      color: var(--secondary);
+      padding: 10px 5px;
+   }
+}
+@media (max-width:1020px){
+  .hero__content{
+   .email__error{
+      width: 70%;
+   }
+  }
+}
+
+
+@media (max-width: 800px){
+   .hero__nav{
+      padding: 0 1rem;
+   }
+   .hero__content {
+      h1{
+         font-size: 2.4rem;
+      }
+      h3{
+         font-size: 1.2rem;
+      }
+      p{
+         font-size: 1rem;
+      }
+      .email__error{
+         width: 90%;
+      }
+   }
+}
+
+@media (max-width: 600px){
+   .hero__nav{
+      padding: 0 .5rem 0 0 ;
+   }
+   .hero__content {
+      h1{
+         font-size: 2rem;
+      }
+      h3{
+         font-size: 1rem;
+      }
+      p{
+         font-size: .9rem;
+      }
+   }
+}
+
+/********** REGISTER FORM **********/
+.register__form{
+   width: 52%;
+   margin: 0 auto;
+   background: white;
+   border-radius: .3rem;
+   margin-top: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   input{
+      flex: 4;
+      border:none;
+      outline:none;
+      padding: 1rem;
+      font-size: 1rem;
+      &::placeholder{
+         font-size: 1rem;
+         color: var(--grey);
+
+      }
+   }
+   div{
+      flex: 2;
+      background:var(--main);
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0;
+      gap:5px;
+      cursor :pointer;
+      &:hover{
+         background: var(--main-hover);
+      }
+
+      button{
+         background:none;
+         border:none;
+         outline: none;
+         font-size: 1.5rem;
+         color: var(--pure);
+         cursor :pointer;
+         &:disabled{
+            cursor: not-allowed;
+         }
+      }
+   }
+}
+
+@media (max-width: 1020px){
+   .register__form{
+      width: 70%;
+   }
+}
+@media (max-width: 700px){
+   .register__form{
+      width: 90%;
+
+      input{
+         padding: .6rem 1rem;
+      }
+      div{
+         padding: .6rem .2rem;
+         gap: 3px;
+         svg{
+            font-size: 14px;
+         }
+         button{
+            font-size: 1rem;
+         }
+      }
+   }
+}

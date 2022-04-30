@@ -1,0 +1,36 @@
+.authNav__container{
+   width: 100%;
+   height: 70px;
+   background-color: var(--pure);
+}
+.authNav{
+   width: 100%;
+   height: 100%;
+   padding: 0 2rem 0 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .authNav__logo img{
+      height: 8rem;
+   }
+   .authNav__menu{
+      
+      a{
+         color: var(--dark);
+         font-size: 1.2rem;
+         font-weight: 400;
+         cursor: pointer;
+         text-transform: capitalize;
+      }
+   }
+}
+
+@media (max-width: 800px){
+   .authNav{
+      padding: 0  1rem 0 0 ;
+      .authNav__logo img{
+         height: 5rem;
+      }
+   }
+}
