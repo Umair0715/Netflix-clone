@@ -1,5 +1,6 @@
-![netflix-rows](https://user-images.githubusercontent.com/95017810/166130957-bb709c41-6cc4-48c8-ae81-c00e80760fd4.png)
-![netflix-banner](https://user-images.githubusercontent.com/95017810/166130914-b3d7db81-a36f-42ea-84c9-d718815b7525.png)
+![netflix2](https://user-images.githubusercontent.com/95017810/166131004-a5c41e1b-8750-4b7a-873d-a58189509bf5.png)
+![netflix1](https://user-images.githubusercontent.com/95017810/166131005-34521505-777c-437f-94bd-454e02099933.png)
+
 PORT
 NODE_ENV
 DATABASE_URI
