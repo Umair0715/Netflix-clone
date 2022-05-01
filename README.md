@@ -1,3 +1,4 @@
+![netflix-banner](https://user-images.githubusercontent.com/95017810/166130914-b3d7db81-a36f-42ea-84c9-d718815b7525.png)
 PORT
 NODE_ENV
 DATABASE_URI
